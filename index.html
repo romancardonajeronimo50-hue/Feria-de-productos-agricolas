@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Feria Digital – El Progreso</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="funciones.js" defer></script>
 </head>
 <body>
 
@@ -24,60 +24,80 @@
 
 <main>
 
-<section id="productos">
-    <h2>Cultivos / Productos</h2>
+    <!-- Sección de Productos -->
+    <section id="productos">
+        <h2>Cultivos / Productos</h2>
 
-    <article>
-        <h3>Café Orgánico</h3>
-        <p>Cultivado de manera sostenible por familias campesinas.</p>
-        <button onclick="verMas('cafe')">Ver más</button>
-        <p id="cafe" class="oculto">
-            Nuestro café es 100% natural y se exporta a mercados locales.
-        </p>
-    </article>
+        <article>
+            <h3>Café Orgánico</h3>
+            <p>Cultivado de manera sostenible por familias campesinas.</p>
+            <a href="productos/cafe.html" class="btn">Ver más</a>
+        </article>
 
-    <article>
-        <h3>Plátano</h3>
-        <p>Producto fresco y de alta calidad.</p>
-        <button onclick="verMas('platano')">Ver más</button>
-        <p id="platano" class="oculto">
-            Cultivado sin químicos y distribuido en la región.
-        </p>
-    </article>
-</section>
+        <article>
+            <h3>Plátano</h3>
+            <p>Producto fresco y de alta calidad.</p>
+            <a href="productos/platano.html" class="btn">Ver más</a>
+        </article>
 
-<section id="galeria">
-    <h2>Galería de Fotos</h2>
-    <div class="galeria">
-        <img src="https://veggiefestchicago.org/wp-content/uploads/2021/05/21-bumble.jpg" alt="Imagen 1">
-        <img src="https://clipart-library.com/images_k/coffee-transparent-tumblr/coffee-transparent-tumblr-15.jpg" alt="Imagen 2">
-    </div>
-</section>
+        <article>
+            <h3>Cacao</h3>
+            <p>Granos seleccionados para chocolates artesanales.</p>
+            <a href="productos/cacao.html" class="btn">Ver más</a>
+        </article>
 
-<section id="logros">
-    <h2>Logros Escolares</h2>
-    <p>Estudiantes ganadores en concursos de ciencia y tecnología rural.</p>
-</section>
+        <article>
+            <h3>Miel Natural</h3>
+            <p>Recolectada de colmenas locales con procesos limpios.</p>
+            <a href="productos/miel.html" class="btn">Ver más</a>
+        </article>
 
-<section id="contacto">
-    <h2>Contacto</h2>
+        <article>
+            <h3>Yuca</h3>
+            <p>Base de la alimentación tradicional, cultivada sin químicos.</p>
+            <a href="productos/yuca.html" class="btn">Ver más</a>
+        </article>
+    </section>
 
-    <div class="info-contacto">
-        <p><strong>Nombre:</strong> Maluma cardona</p>
-        <p><strong>Celular:</strong> 3226631761</p>
-        <p><strong>Correo:</strong> romancardonajeronimo50@gmail.com</p>
-        <p><strong>Ubicación:</strong> Vereda La Antena </p>
-        <p><strong>Rol:</strong> Organizador de la Feria Digital</p>
-    </div>
-</section>
+    <!-- Sección de Galería -->
+    <section id="galeria">
+        <h2>Galería de Fotos</h2>
+        <div class="galeria">
+            <img src="img/cafe/cafe1.jpg" alt="Cultivo de café">
+            <img src="img/platano/platano1.jpg" alt="Cultivo de plátano">
+            <img src="img/cacao/cacao1.jpg" alt="Cultivo de cacao">
+        </div>
+    </section>
+
+    <!-- Sección de Logros -->
+    <section id="logros">
+        <h2>Logros Escolares</h2>
+        <p>Estudiantes ganadores en concursos de ciencia y tecnología rural.</p>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre">
+
+            <label for="celular">Celular:</label>
+            <input type="text" id="celular" placeholder="Ej: 3001234567">
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" placeholder="Escribe tu mensaje"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="resultado"></p>
+    </section>
 
 </main>
 
 <footer>
     <p>© 2026 Feria Digital - Vereda La Antena</p>
 </footer>
-
-<script src="funciones.js"></script>
 
 </body>
 </html>

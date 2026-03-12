@@ -1,46 +1,34 @@
-// Función para mostrar u ocultar información
-function verMas(id) {
-    const elemento = document.getElementById(id);
-
-    console.log("Botón Ver más presionado");
-
-    if (elemento.style.display === "block") {
-        elemento.style.display = "none";
-    } else {
-        elemento.style.display = "block";
-    }
-}
-
-// Validación del formulario
-document.getElementById("formulario").addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    const nombre = document.getElementById("nombre").value;
-    const celular = document.getElementById("celular").value;
-    const mensaje = document.getElementById("mensaje").value;
+// Validación del formulario de contacto
+document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.getElementById("formulario");
     const resultado = document.getElementById("resultado");
 
-    console.log("Intentando enviar formulario...");
+    formulario.addEventListener("submit", (event) => {
+        event.preventDefault(); // Evita que se recargue la página
 
-    if (nombre === "") {
-        resultado.textContent = "El nombre es obligatorio";
-        console.log("Validación fallida: nombre vacío");
-        return;
-    }
+        const nombre = document.getElementById("nombre").value.trim();
+        const celular = document.getElementById("celular").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
 
-    if (!/^\d{10}$/.test(celular)) {
-        resultado.textContent = "El celular debe tener exactamente 10 dígitos";
-        console.log("Validación fallida: celular incorrecto");
-        return;
-    }
-
-    if (mensaje.length < 10) {
-        resultado.textContent = "El mensaje debe tener mínimo 10 caracteres";
-        console.log("Validación fallida: mensaje corto");
-        return;
-    }
-
-    resultado.textContent = "Formulario enviado correctamente";
-    console.log("Validación exitosa");
+        if (nombre === "" || celular === "" || mensaje === "") {
+            resultado.textContent = "Por favor completa todos los campos.";
+            resultado.style.color = "red";
+        } else {
+            resultado.textContent = `Gracias, ${nombre}. Tu mensaje ha sido enviado correctamente.`;
+            resultado.style.color = "green";
+            formulario.reset(); // Limpia el formulario
+        }
+    });
 });
+
+// Función para mostrar/ocultar secciones de productos (opcional)
+function verMas(id) {
+    const elemento = document.getElementById(id);
+    if (elemento) {
+        if (elemento.classList.contains("oculto")) {
+            elemento.classList.remove("oculto");
+        } else {
+            elemento.classList.add("oculto");
+        }
+    }
+}
